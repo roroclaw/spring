@@ -1,0 +1,23 @@
+package com.roroclaw.eurakagateway;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+
+@EnableZuulProxy
+@EnableEurekaClient
+@SpringBootApplication
+public class EurakagatewayApplication {
+
+    protected static final Logger logger = LoggerFactory.getLogger(EurakagatewayApplication.class);
+
+    //网关服务启动类
+    public static void main(String[] args) {
+        SpringApplication.run(EurakagatewayApplication.class, args);
+        logger.info("==========网关服务启动=========");
+    }
+
+}
